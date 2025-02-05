@@ -4,6 +4,8 @@
 
 Construir uma página web Landing Page.
 
+Site: https://rafaeldesafiodnc.netlify.app/
+
 ## Sobre o Curso Fullstack
 
 O curso Fullstack da DNC é projetado para ensinar as habilidades essenciais de desenvolvimento web, tanto no frontend quanto no backend.
