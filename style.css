@@ -1,0 +1,100 @@
+body {
+  margin: 0px;
+  font-family: "inter", sans-serif;
+}
+
+#menu-principal {
+  background-color: #303030;
+  color: #fff;
+  padding: 10px;
+  height: 300px;
+}
+
+#titulo-principal {
+  font-size: 40px;
+  margin-left: 62px;
+  margin-top: 95px;
+}
+
+#paragrafo-principal {
+  margin-left: 62px;
+  font-size: 15px;
+}
+
+#menu-secundario {
+  background-color: #f9f9f9;
+  padding: 10px;
+  height: 150px;
+  display: grid;
+  grid-auto-flow: column;
+  columns: auto;
+}
+
+.imagens-secundario {
+  margin-left: 180px;
+  margin-top: 40px;
+}
+#menu-inferior {
+  background-color: white;
+  margin-left: 150px;
+  margin-top: 40px;
+  height: 550px;
+  display: grid;
+  grid-auto-flow: column;
+  columns: auto;
+}
+
+h1 {
+  margin-left: 10px;
+  margin-top: 130px;
+  font-size: 32px;
+}
+
+p {
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+#titulo2 {
+  color: #ffffff;
+  margin: 35px;
+  font-size: 32px;
+  padding: 50px;
+}
+
+#formulario {
+  text-align: center;
+  background-color: #303030;
+}
+#titulodoformulario {
+  font-size: 32px;
+  margin: 15px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 300px;
+  height: 40px;
+  margin: 13px;
+  background-color: #ffffff;
+  border: 0px;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+button {
+  background-color: #c07212;
+  color: #ffffff;
+  height: 40px;
+  width: 150px;
+  border: 0px;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translateY(-7px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
