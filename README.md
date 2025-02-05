@@ -1,15 +1,17 @@
-# 🎉 Desafio 01 - Curso Fullstack DNC 🎉
+# 🎉 Curso Fullstack DNC - Desafio 01 🎉
 
 ## Objetivo
 
-Construir uma página web interativa utilizando HTML, CSS, JavaScript e Node.js.
+Construir uma página web Landing Page.
 
-## Tecnologias Utilizadas
+## Sobre o Curso Fullstack
 
-- **HTML**: Estrutura do conteúdo da web.
-- **CSS**: Estilo e aparência visual.
-- **JavaScript**: Interatividade.
-- **Node.js**: Execução JavaScript no servidor.
+O curso Fullstack da DNC é projetado para ensinar as habilidades essenciais de desenvolvimento web, tanto no frontend quanto no backend.
+
+- **HTML**: A estrutura básica de todas as páginas web.
+- **CSS**: Como estilizar e dar vida às páginas web.
+- **JavaScript**: Tornando as páginas interativas e dinâmicas.
+- **Node.js**: Construção de servidores e APIs, permitindo que o JavaScript seja executado no backend.
 
 ---
 
