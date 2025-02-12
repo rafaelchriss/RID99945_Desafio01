@@ -15,6 +15,4 @@ O curso Fullstack da DNC é projetado para ensinar as habilidades essenciais de 
 - **JavaScript**: Tornando as páginas interativas e dinâmicas.
 - **Node.js**: Construção de servidores e APIs.
 
----
 
-💻 **Feliz codificação!** 🚀
