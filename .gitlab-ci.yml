@@ -3,10 +3,8 @@ dast_scan:
   image: maven:3.8.5-openjdk-11-slim
   before_script: [] 
   script:
-    - export http_proxy=$PROXY_DOCKER
-    - export https_proxy=$PROXY_DOCKER
     - apt-get update
-    - apt-get -y install wget wkhtmltopdf msmtp
+    - apt-get -y install wget wkhtmltopdf
     - wget https://github.com/zaproxy/zaproxy/releases/download/v2.15.0/ZAP_2.15.0_Linux.tar.gz
     - mkdir zap
     - tar -xvf ZAP_2.15.0_Linux.tar.gz
@@ -14,44 +12,6 @@ dast_scan:
     - ./zap.sh -cmd -quickurl $DAST_TARGET_URL -quickprogress -quickout ../zap_report.html -config database.reset=true
     - cd ..
     - wkhtmltopdf zap_report.html zap_report.pdf
-
-    # Configurações para envio de e-mail
-    - |
-      echo "account gitlab" > /etc/msmtprc
-      echo "host $HOST_SMTP_ZAP" >> /etc/msmtprc
-      echo "port 587" >> /etc/msmtprc
-      echo "auth on" >> /etc/msmtprc
-      echo "user $USER_SMTP_ZAP" >> /etc/msmtprc
-      echo "password $PASSWORD_ZAP" >> /etc/msmtprc
-      echo "tls on" >> /etc/msmtprc
-      echo "tls_starttls on" >> /etc/msmtprc
-      echo "tls_certcheck off" >> /etc/msmtprc
-      echo "from $USER_SMTP_ZAP" >> /etc/msmtprc
-      echo "logfile /var/log/msmtp.log" >> /etc/msmtprc
-      echo "account default : gitlab" >> /etc/msmtprc
-    - chmod 600 /etc/msmtprc
-
-    # Enviar e-mail com o relatório
-    - |
-      {
-        current_time=$(date "+%Y-%m-%d")
-        echo "Subject: Relatório DAST gerado em $current_time para o site $DAST_TARGET_URL."
-        echo "To: $REMETENTE_EMAIL_ZAP"
-        echo "Content-Type: multipart/mixed; boundary=\"boundary\""
-        echo ""
-        echo "--boundary"
-        echo "Content-Type: text/plain; charset=\"utf-8\""
-        echo ""
-        echo "O relatório do DAST está em anexo. O site que foi escaneado é: $DAST_TARGET_URL."
-        echo ""
-        echo "--boundary"
-        echo "Content-Type: application/pdf; name=\"zap_report.pdf\""
-        echo "Content-Transfer-Encoding: base64"
-        echo "Content-Disposition: attachment; filename=\"zap_report.pdf\""
-        echo ""
-        base64 zap_report.pdf
-        echo "--boundary--"
-      } | msmtp -a gitlab -t
 
   artifacts:
     paths:
